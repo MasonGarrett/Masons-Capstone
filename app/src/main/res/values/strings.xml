@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">League of Legends Esports App</string>
+    <string name="login_title">Log In</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="signup_question">Don\'t have an account?</string>
+    <string name="signup_button">Sign Up.</string>
+</resources>
