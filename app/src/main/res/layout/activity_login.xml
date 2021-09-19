@@ -6,17 +6,17 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
     android:paddingLeft="10dp"
-    android:paddingTop="50dp"
+    android:paddingTop="70dp"
     android:paddingRight="10dp"
     android:paddingBottom="10dp"
-    tools:context=".Registration">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/loginTitle"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
-        android:text="@string/register_title"
+        android:text="@string/login_title"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="30sp"
@@ -37,68 +37,72 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/emailInput"
+        android:id="@+id/passwordInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/usernameInput"
         android:layout_marginTop="25dp"
         android:backgroundTint="@color/buttons"
-        android:hint="@string/email_hint"
+        android:hint="@string/password_hint"
         android:includeFontPadding="true"
         android:inputType="text"
         android:paddingLeft="10dp"
+        android:password="true"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/passwordInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/emailInput"
-        android:layout_marginTop="25dp"
-        android:backgroundTint="@color/buttons"
-        android:hint="@string/password_hint"
-        android:includeFontPadding="true"
-        android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/confirmPasswordInput"
+    <Button
+        android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/passwordInput"
         android:layout_marginTop="25dp"
         android:backgroundTint="@color/buttons"
-        android:hint="@string/confirm_password_hint"
-        android:includeFontPadding="true"
-        android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="20sp" />
-
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/favouriteTeam"
-        style="@style/Widget.AppCompat.Spinner.Underlined"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/confirmPasswordInput"
-        android:layout_marginTop="25dp"
-        android:backgroundTint="@color/buttons" />
-
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/favouriteTeam"
-        android:layout_marginTop="25dp"
-        android:backgroundTint="@color/buttons"
-        android:text="@string/signup_button"
+        android:text="@string/login_title"
         android:textAllCaps="false"
         android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginButton"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:text="@string/forgot_password"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/signup_question"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/signupButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="@string/signup_button"
+            android:textAlignment="center"
+            android:textColor="@color/buttons"
+            android:textSize="20sp" />
+    </LinearLayout>
 
 </RelativeLayout>

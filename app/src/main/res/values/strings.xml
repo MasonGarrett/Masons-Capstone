@@ -9,10 +9,14 @@
     <string name="signup_question">Don\'t have an account?</string>
     <string name="signup_button">Sign Up</string>
     <string name="register_title">Create an Account</string>
+    <string name="users_username">(TEMP)MaseLoL</string>
+    <string name="users_team">(TEMP)Counter Logic Gaming</string>
+    <string name="logout_button">Sign Out</string>
     <string-array name="lcs_teams">
         <item>Pick a Favourite Team</item>
         <item>Team SoloMid</item>
         <item>Evil Genius</item>
+        <item>Counter Logic Gaming</item>
         <item>FlyQuest</item>
         <item>Team Liquid</item>
         <item>Golden Guardians</item>
