@@ -2,8 +2,23 @@
     <string name="app_name">League of Legends Esports App</string>
     <string name="login_title">Log In</string>
     <string name="username_hint">Username</string>
+    <string name="email_hint">Email</string>
     <string name="password_hint">Password</string>
+    <string name="confirm_password_hint">Confirm Password</string>
     <string name="forgot_password">Forgot your password?</string>
     <string name="signup_question">Don\'t have an account?</string>
-    <string name="signup_button">Sign Up.</string>
+    <string name="signup_button">Sign Up</string>
+    <string name="register_title">Create an Account</string>
+    <string-array name="lcs_teams">
+        <item>Pick a Favourite Team</item>
+        <item>Team SoloMid</item>
+        <item>Evil Genius</item>
+        <item>FlyQuest</item>
+        <item>Team Liquid</item>
+        <item>Golden Guardians</item>
+        <item>Immortals</item>
+        <item>Dignitas</item>
+        <item>Cloud9</item>
+        <item>100 Thieves</item>
+    </string-array>
 </resources>
