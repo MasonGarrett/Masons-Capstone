@@ -26,7 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase myDB) {
-        myDB.execSQL("create TABLE users(_id integer primary key, username Text, email Text, password Text, first_name Text, last_name Text)");
+        myDB.execSQL("create TABLE users(_id integer primary key, username Text, email Text, password Text)");
     }
 
     /**
@@ -45,18 +45,14 @@ public class DBHelper extends SQLiteOpenHelper {
      * @param username
      * @param email
      * @param password
-     * @param firstName
-     * @param lastName
      * @return - whether or not the user was successfully added to the database.
      */
-    public Boolean createNewUser(String username, String email, String password, String firstName, String lastName){
+    public Boolean createNewUser(String username, String email, String password){
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
         contentValues.put("email", email);
         contentValues.put("password", password);
-        contentValues.put("first_name", firstName);
-        contentValues.put("last_name", lastName);
         long result = myDB.insert("users", null, contentValues);
 
         if(result == -1){

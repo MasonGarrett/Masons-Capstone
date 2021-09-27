@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone">
-        <activity android:name=".Login"></activity>
-        <activity android:name=".Registration" />
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Login" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Registration"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait">
             <intent-filter>
