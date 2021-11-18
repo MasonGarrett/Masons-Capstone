@@ -26,7 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase myDB) {
-        myDB.execSQL("create TABLE users(_id integer primary key, username Text, email Text, password Text)");
+        myDB.execSQL("create TABLE users(_id integer primary key, username Text, email Text, favteam Text, password Text)");
     }
 
     /**
@@ -47,11 +47,12 @@ public class DBHelper extends SQLiteOpenHelper {
      * @param password
      * @return - whether or not the user was successfully added to the database.
      */
-    public Boolean createNewUser(String username, String email, String password){
+    public Boolean createNewUser(String username, String email, String favTeam, String password){
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
         contentValues.put("email", email);
+        contentValues.put("favteam", favTeam);
         contentValues.put("password", password);
         long result = myDB.insert("users", null, contentValues);
 
@@ -92,5 +93,17 @@ public class DBHelper extends SQLiteOpenHelper {
         } else {
             return false;
         }
+    }
+
+    public User getUser(String user, Context context){
+        SQLiteDatabase myDB = this.getReadableDatabase();
+        Cursor cursor = myDB.rawQuery("select * from users where username = ?", new String[] {user});
+        cursor.moveToFirst();
+        int id = cursor.getInt(cursor.getColumnIndex("_id"));
+        String username = cursor.getString(cursor.getColumnIndex("username"));
+        String email = cursor.getString(cursor.getColumnIndex("email"));
+        String favTeam = cursor.getString(cursor.getColumnIndex("favteam"));
+        User newUser = new User(id, username, email, favTeam, context);
+        return newUser;
     }
 }

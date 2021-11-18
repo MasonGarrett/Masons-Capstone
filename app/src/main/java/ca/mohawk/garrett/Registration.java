@@ -50,6 +50,8 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
                 String emailInput = email.getText().toString();
                 String passwordInput = password.getText().toString();
                 String confirmPasswordInput = confirmPassword.getText().toString();
+                int favTeamID = colouredSpinner.getSelectedItemPosition();
+                String favTeam = colouredSpinner.getSelectedItem().toString();
 
                 if(userInput.equals("") || emailInput.equals("") || passwordInput.equals("") || confirmPasswordInput.equals("")){
                     Toast.makeText(Registration.this, "Input fields cannot be blank!", Toast.LENGTH_SHORT).show();
@@ -58,10 +60,13 @@ public class Registration extends AppCompatActivity implements AdapterView.OnIte
                     Toast.makeText(Registration.this, "Password inputs do not match!", Toast.LENGTH_SHORT).show();
                 }
                 else if (myDB.checkUsername(userInput)){
-                    Toast.makeText(Registration.this, "Username is already in use.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Registration.this, "Username is already in use!", Toast.LENGTH_SHORT).show();
+                }
+                else if (favTeamID == 0){
+                    Toast.makeText(Registration.this, "Please select a favourite team!", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Boolean result = myDB.createNewUser(userInput, emailInput, passwordInput);
+                    Boolean result = myDB.createNewUser(userInput, emailInput, favTeam, passwordInput);
                     if(result){
                         Toast.makeText(Registration.this, "Account created!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), Login.class);

@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Capstone">
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Login" />
+        <activity android:name=".Registration" />
         <activity
-            android:name=".Registration"
+            android:name=".Login"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait">
             <intent-filter>

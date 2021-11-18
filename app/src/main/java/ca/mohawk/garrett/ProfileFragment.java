@@ -10,17 +10,20 @@ import androidx.fragment.app.Fragment;
 
 public class ProfileFragment extends Fragment {
 
-    private String username;
+    private User user;
 
-    public ProfileFragment(String username){
-        this.username = username;
+    public ProfileFragment(User user){
+        this.user = user;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
         TextView usernameLabel = v.findViewById(R.id.usersUsername);
-        usernameLabel.setText(username);
+        TextView teamLabel = v.findViewById(R.id.usersTeam);
+
+        usernameLabel.setText(user.getUsername());
+        teamLabel.setText(user.getFavTeam());
         return v;
     }
 }

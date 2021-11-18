@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+    DBHelper myDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +21,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        myDB = new DBHelper(this);
         Intent intent = getIntent();
+
         String username = intent.getStringExtra("username");
+        User user = myDB.getUser(username, this);
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, new ProfileFragment(username));
+        fragmentTransaction.replace(R.id.fragment_container, new ProfileFragment(user));
         fragmentTransaction.commit();
     }
 
